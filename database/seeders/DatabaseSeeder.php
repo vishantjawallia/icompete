@@ -27,6 +27,11 @@ class DatabaseSeeder extends Seeder
         // CoinTransaction::factory(33)->create();
         // Contest::factory(33)->create();
         // Submission::factory(300)->create();
+
+        // Create some users first
+        User::factory(10)->create();
+        
+        // Then create withdrawals
         Withdrawal::factory(300)->create();
 
         // User::factory()->create([

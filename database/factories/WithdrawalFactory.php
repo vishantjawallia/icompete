@@ -18,8 +18,11 @@ class WithdrawalFactory extends Factory
         $paymentDetails = $this->getPaymentDetails($method);
         $balance = fake()->numberBetween(100, 1000);
 
+        // Get a random user or create one if none exists
+        $user = User::inRandomOrder()->first() ?? User::factory()->create();
+
         return [
-            'user_id'         => User::inRandomOrder()->first()?->id,
+            'user_id'         => $user->id,  // This will now always have a value
             'amount'          => $amount,
             'coins'           => $coins,
             'method'          => $method,

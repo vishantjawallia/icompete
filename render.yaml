@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: icompete
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://icompete.onrender.com
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+          name: icompete-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: icompete-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: icompete-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: icompete-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: icompete-db
+          property: password
+
+databases:
+  - name: icompete-db
+    databaseName: icomlyvk_icompete-app
+    user: icomlyvk_icompete-app
+    plan: free 

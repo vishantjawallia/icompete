@@ -13,6 +13,8 @@ services:
       - ./:/var/www
     networks:
       - icompete-network
+    expose:
+      - "9000"
 
   # Nginx Service
   nginx:
@@ -20,12 +22,14 @@ services:
     container_name: icompete-nginx
     restart: unless-stopped
     ports:
-      - "8000:80"
+      - "10000:80"
     volumes:
       - ./:/var/www
       - ./docker/nginx/conf.d:/etc/nginx/conf.d/
     networks:
       - icompete-network
+    depends_on:
+      - app
 
   # PostgreSQL Service
   db:

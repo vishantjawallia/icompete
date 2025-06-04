@@ -21,6 +21,11 @@ return new class extends Migration
             $table->enum('status', ['active', 'disabled', 'pending'])->default('active');
             $table->timestamps();
             $table->softDeletes();
+            
+            // Add unique constraint to id column
+            $table->unique('id');
+            
+            // Add foreign keys
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('parent_comment_id')->references('id')->on('post_comments')->onDelete('cascade'); // For nested comments

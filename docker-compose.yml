@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: icompete-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - icompete-network
+
+  # Nginx Service
+  nginx:
+    image: nginx:alpine
+    container_name: icompete-nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d/
+    networks:
+      - icompete-network
+
+  # PostgreSQL Service
+  db:
+    image: postgres:15-alpine
+    container_name: icompete-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: icomlyvk_icompete-app
+      POSTGRES_USER: icomlyvk_icompete-app
+      POSTGRES_PASSWORD: "[d?PiX{#8BAQvx&w*Z"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - icompete-network
+
+networks:
+  icompete-network:
+    driver: bridge
+
+volumes:
+  dbdata: 

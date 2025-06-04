@@ -1,0 +1,6 @@
+[
+  {
+    "type": "sqlite",
+    "path": "c:\\MAMP\\htdocs\\icompete\\database\\database.sqlite"
+  }
+]

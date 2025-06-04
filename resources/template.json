@@ -1,0 +1,481 @@
+[
+    {
+        "type": "USER_WELCOME",
+        "name": "User Welcome Notification",
+        "title": "Welcome to {site_name}! 🎉",
+        "message": "Welcome to {site_name}! Your account has been created successfully.",
+        "email_subject": "Welcome to {site_name} - Get Started! 🎉",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Welcome to {site_name}! We're excited to have you join our competition platform. Your account has been successfully created.</div><div><br></div><div>Here's what you can do:</div><div>- Browse and join exciting competitions</div><div>- Submit your entries and showcase your talents</div><div>- Vote on other contestants' entries</div><div>- Track your coins and rewards</div><div><br></div><div>Need help getting started? Contact us at {support_email}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": ["username", "name", "email"],
+        "channels": ["email"]
+    },
+    {
+        "type": "ORGANIZER_WELCOME",
+        "name": "Organizer Welcome",
+        "title": "Welcome Organizer to {site_name}! 🎯",
+        "message": "Welcome to {site_name}! Your organizer account is ready.",
+        "email_subject": "Welcome to {site_name} - Start Creating Contests! 🎯",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Welcome to {site_name} as a Contest Organizer! Your account has been created and you're ready to start creating amazing competitions.</div><div><br></div><div>As an organizer, you can:</div><div>- Create and manage contests</div><div>- Track participant entries</div><div>- Manage voting periods</div><div>- Monitor contest analytics</div><div><br></div><div>Need assistance? Contact our organizer support at {support_email}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": ["username", "name", "email"],
+        "channels": ["email"]
+    },
+    {
+        "type": "EMAIL_VERIFY",
+        "name": "Email Verification",
+        "title": "Verify Your Email",
+        "message": "Please verify your email address to continue.",
+        "email_subject": "Verify Your {site_name} Email Address",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Thanks for signing up with {site_name}! To complete your registration, please verify your email address.</div><div><br></div><div>Your verification code is: <strong>{verification_code}</strong></div><div><br></div><div>This code will expire in {expiry_time} minutes.</div><div><br></div><div>If you didn't create an account with us, please ignore this email.</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": ["username", "name", "verification_code", "expiry_time"],
+        "channels": ["email"]
+    },
+    {
+        "type": "USER_BAN",
+        "name": "Account Banned",
+        "title": "Account Suspended",
+        "message": "Your account has been suspended due to violation of our terms.",
+        "email_subject": "Your {site_name} Account Has Been Suspended",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Your account on {site_name} has been suspended due to violation of our terms of service.</div><div><br></div><div>Reason: {ban_reason}</div><div><br></div><div>If you believe this is a mistake, please contact our support team at {support_email}.</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": ["username", "name", "ban_reason"],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "USER_UNBAN",
+        "name": "Account Restored",
+        "title": "Account Restored",
+        "message": "Your account has been restored. Welcome back!",
+        "email_subject": "Your {site_name} Account Has Been Restored",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Good news! Your account on {site_name} has been restored and you can now access all features again.</div><div><br></div><div>We appreciate your patience during this process. Please remember to follow our community guidelines to avoid future issues.</div><div><br></div><div>If you have any questions, contact us at {support_email}.</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": ["username", "name"],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "RESET_PASSWORD",
+        "name": "Password Reset Request",
+        "title": "Reset Your Password",
+        "message": "A password reset was requested for your account.",
+        "email_subject": "Reset Your {site_name} Password",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>We received a request to reset your password for your {site_name} account.</div><div><br></div><div>Your password reset code is: <strong>{reset_code}</strong></div><div><br></div><div>This code will expire in {expiry_time} minutes.</div><div><br></div><div>If you didn't request this change, please contact us immediately at {support_email}.</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": ["username", "name", "reset_code", "expiry_time"],
+        "channels": ["email"]
+    },
+    {
+        "type": "PASSWORD_CHANGED",
+        "name": "Password Changed",
+        "title": "Password Successfully Changed",
+        "message": "Your password has been successfully updated.",
+        "email_subject": "Your {site_name} Password Has Been Changed",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Your password for {site_name} has been successfully changed.</div><div><br></div><div>If you didn't make this change, please contact us immediately at {support_email}.</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": ["username", "name"],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "COIN_PURCHASE",
+        "name": "Coin Purchase Confirmation",
+        "title": "Coins Purchased Successfully! 🎉",
+        "message": "Your purchase of {coin_amount} coins has been completed.",
+        "email_subject": "Your {site_name} Coin Purchase Confirmation",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Thank you for your purchase! Your account has been credited with {coin_amount} coins.</div><div><br></div><div>Transaction Details:</div><div>- Amount: {currency}{amount}</div><div>- Coins Received: {coin_amount}</div><div>- Transaction ID: {transaction_id}</div><div>- Date: {date}</div><div><br></div><div>Your new coin balance is: {coin_balance}</div><div><br></div><div>Ready to use your coins? Check out our featured contests!</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "name",
+            "coin_amount",
+            "amount",
+            "transaction_id",
+            "coin_balance"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "WITHDRAW_APPROVED",
+        "name": "Withdrawal Approved",
+        "title": "Withdrawal Request Approved",
+        "message": "Your withdrawal request for {currency}{amount} has been approved.",
+        "email_subject": "Your {site_name} Withdrawal Request Has Been Approved",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Good news! Your withdrawal request has been approved and is being processed.</div><div><br></div><div>Withdrawal Details:</div><div>- Amount: {currency}{amount}</div><div>- Request ID: {withdraw_code}</div><div>- Date: {date}</div><div><br></div><div>The funds should appear in your account within {processing_time} business days.</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "amount",
+            "withdraw_code",
+            "processing_time"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "WITHDRAW_REJECTED",
+        "name": "Withdrawal Rejected",
+        "title": "Withdrawal Request Declined",
+        "message": "Your withdrawal request has been declined. Reason: {reject_reason}",
+        "email_subject": "Your {site_name} Withdrawal Request Status Update",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>We regret to inform you that your withdrawal request has been declined.</div><div><br></div><div>Request Details:</div><div>- Amount: {currency}{amount}</div><div>- Request ID: {withdraw_code}</div><div>- Date: {date}</div><div>- Reason: {reject_reason}</div><div><br></div><div>If you need clarification or assistance, please contact our support team at {support_email}.</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": ["username", "amount", "withdraw_code", "reject_reason"],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "POST_COMMENT",
+        "name": "New Comment Notification",
+        "title": "New Comment on Your Post",
+        "message": "{commenter} commented on your post: '{comment_preview}'",
+        "email_subject": "New Comment on Your {site_name} Post",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>{commenter} has commented on your post:</div><div><br></div><div>'{comment_preview}'</div><div><br></div><div>View the full conversation and reply here: </div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": ["username", "commenter", "comment_preview"],
+        "channels": ["push", "inapp"]
+    },
+    {
+        "type": "CONTEST_RECOMMENDATION",
+        "name": "Contest Recommendations",
+        "title": "🎯 Contests You Might Like",
+        "message": "We found {contest_count} contests that match your interests!",
+        "email_subject": "Recommended Contests on {site_name} Just for You",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Based on your interests and past participation, we think you'll love these contests:</div><div><br></div><div>{contest_recommendations}</div><div><br></div><div>Total Prize Pool: {currency}{total_prize_pool}</div><div>Entry Deadline: {entry_deadline}</div><div><br></div><div>Don't miss out on these exciting opportunities! Click here to view all details: {contests_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_count",
+            "contest_recommendations",
+            "total_prize_pool",
+            "entry_deadline",
+            "contests_link"
+        ],
+        "channels": ["push", "inapp"]
+    },
+    {
+        "type": "VOTER_NEW_CONTESTS",
+        "name": "New Votable Contests",
+        "title": "New Contests Ready for Voting! 🗳️",
+        "message": "{contest_count} new contests are open for voting",
+        "email_subject": "Vote Now on New {site_name} Contests",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>New contests are ready for your votes! Your opinion matters in choosing the winners.</div><div><br></div><div>Featured Contests:</div><div>{contest_list}</div><div><br></div><div>Remember:</div><div>- You have {coins_per_vote} coins per vote</div><div>- Voting ends: {voting_end_date}</div><div><br></div><div>Start voting now: {voting_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_count",
+            "contest_list",
+            "coins_per_vote",
+            "voting_end_date",
+            "voting_link"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "VOTING_ENDED",
+        "name": "Voting Period Ended",
+        "title": "Voting Has Ended",
+        "message": "Voting period has ended for {contest_name}",
+        "email_subject": "Voting Closed for {contest_name} on {site_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>The voting period for {contest_name} has ended. Thank you for participating!</div><div><br></div><div>Your Voting Summary:</div><div>- Total votes cast: {votes_cast}</div><div>- Coins earned from voting: {coins_earned}</div><div><br></div><div>Winners will be announced soon. Stay tuned!</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "votes_cast",
+            "coins_earned"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "AVAILABLE_CONTESTS",
+        "name": "Available Contests",
+        "title": "New Contests Available! 🎯",
+        "message": "{contest_count} new contests match your interests",
+        "email_subject": "New Contests Available on {site_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>New contests that match your interests are now available!</div><div><br></div><div>Featured Contests:</div><div>{contest_list}</div><div><br></div><div>Key Details:</div><div>- Total prize pools: {currency}{total_prize_pool}</div><div>- Entry deadlines vary</div><div>- Entry fees: {entry_fee_range}</div><div><br></div><div>View all contests: {contests_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_count",
+            "contest_list",
+            "total_prize_pool",
+            "entry_fee_range"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "ENTRY_STATUS",
+        "name": "Contestant Entry Status Update",
+        "title": "Entry Status Update",
+        "message": "Your entry for {contest_name} is now {status}",
+        "email_subject": "Entry Status Update - {contest_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Your entry for {contest_name} has been {status}.</div><div><br></div><div>Entry Details:</div><div>- Submission Date: {submission_date}</div><div>- Entry ID: {entry_id}</div><div>{status_message}</div><div><br></div><div>View your entry: {entry_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "status",
+            "submission_date",
+            "entry_id",
+            "status_message"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "VOTING_START",
+        "name": "Contestant Voting Start",
+        "title": "Voting Now Open! 🗳️",
+        "message": "Voting has begun for {contest_name}",
+        "email_subject": "Start Voting in {contest_name} on {site_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Voting has started for {contest_name}! Your entry is now visible to voters.</div><div><br></div><div>Contest Details:</div><div>- Voting Period: {voting_duration}</div><div>- Current Entries: {entry_count}</div><div>- Prize Pool: {currency}{prize_pool}</div><div><br></div><div>Share your entry with friends to get more votes!</div><div>Your Entry Link: {entry_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "voting_duration",
+            "entry_count",
+            "prize_pool"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "CONTEST_CLOSED",
+        "name": "Contestant Contest Closed",
+        "title": "Contest Closed",
+        "message": "{contest_name} has ended. Winners will be announced soon!",
+        "email_subject": "{contest_name} Has Concluded - {site_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>The {contest_name} contest has officially ended.</div><div><br></div><div>Contest Summary:</div><div>- Total Entries: {total_entries}</div><div>- Total Votes: {total_votes}</div><div>- Your Final Rank: {current_rank}</div><div><br></div><div>Winners will be announced within {announcement_time}.</div><div><br></div><div>View contest results: {results_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "total_entries",
+            "total_votes",
+            "current_rank",
+            "announcement_time"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "CONTEST_WINNER",
+        "name": "Contest Winner Announcement",
+        "title": "🏆 Congratulations, Winner!",
+        "message": "Congratulations! You've won {contest_name}!",
+        "email_subject": "🏆 You're a Winner in {contest_name}!",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Congratulations! You've won {contest_name}!</div><div><br></div><div>Your Prize:</div><div>- {prize_description}</div><div>- {currency}{prize_amount} worth of coins</div><div><br></div><div>Your winning entry received:</div><div>- Total Votes: {vote_count}</div><div>- Final Score: {final_score}</div><div><br></div><div>Your prizes will be credited to your account within {credit_time}.</div><div><br></div><div>View your winning entry: {entry_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "prize_description",
+            "prize_amount",
+            "vote_count",
+            "final_score",
+            "credit_time"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "RANK_UPDATE",
+        "name": "Contest Rank Update",
+        "title": "Rank Update",
+        "message": "Your rank in {contest_name} has changed to #{new_rank}",
+        "email_subject": "Your Ranking Update - {contest_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Your ranking has changed in {contest_name}!</div><div><br></div><div>Current Stats:</div><div>- New Rank: #{new_rank}</div><div>- Previous Rank: #{old_rank}</div><div>- Total Votes: {vote_count}</div><div>- Hours Until Contest End: {hours_remaining}</div><div><br></div><div>View your entry: {entry_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "new_rank",
+            "old_rank",
+            "vote_count",
+            "hours_remaining"
+        ],
+        "channels": ["push", "inapp"]
+    },
+    {
+        "type": "VOTE_RECEIVED",
+        "name": "New Vote Received",
+        "title": "New Vote Received! 🗳️",
+        "message": "Your entry in {contest_name} received a new vote!",
+        "email_subject": "New Vote on Your {site_name} Entry",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Great news! Your entry in {contest_name} has received a new vote.</div><div><br></div><div>Current Stats:</div><div>- Total Votes: {total_votes}</div><div>- Current Rank: #{current_rank}</div><div>- Contest Ends In: {time_remaining}</div><div><br></div><div>View your entry: {entry_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "total_votes",
+            "current_rank",
+            "time_remaining"
+        ],
+        "channels": ["push", "inapp"]
+    },
+    {
+        "type": "ORG_CONTEST_STATUS",
+        "name": "Organizer Contest Status",
+        "title": "{contest_name} was {contest_status}",
+        "message": "Your {contest_name} was {contest_status} by Admin.",
+        "email_subject": "Status Update - Your Contest on {site_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Here's an update on your contest: {contest_name}</div><div><br></div><div>Current Status: {contest_status}</div><div>- Entries: {entry_count}</div><div>- Total Votes: {vote_count}</div><div>- Time Remaining: {time_remaining}</div><div><br></div><div>Contest Statistics:</div><div>{contest_stats}</div><div><br></div><div>View full details: {contest_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "contest_status",
+            "entry_count",
+            "vote_count",
+            "time_remaining",
+            "contest_stats"
+        ],
+        "channels": ["email", "inapp"]
+    },
+    {
+        "type": "ORG_CONTEST_APPROVED",
+        "name": "Organizer Contest Approval",
+        "title": "Contest Approved Successfully",
+        "message": "Your contest: {contest_name} have been approved. You can now receive entry and submissions on it.",
+        "email_subject": "Status Update - Your Contest on {site_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Here's an update on your contest: {contest_name}</div><div><br></div><div>Current Status:</div><div>- Entries: {entry_count}</div><div>- Total Votes: {vote_count}</div><div>- Time Remaining: {time_remaining}</div><div><br></div><div>Contest Statistics:</div><div>{contest_stats}</div><div><br></div><div>View full details: {contest_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "entry_count",
+            "vote_count",
+            "time_remaining",
+            "contest_stats"
+        ],
+        "channels": ["email", "inapp"]
+    },
+    {
+        "type": "ORG_NEW_SUBMISSION",
+        "name": "Organizer Contest Submission",
+        "title": "New Entry Received",
+        "message": "New entry received for {contest_name}",
+        "email_subject": "New Entry in Your Contest - {site_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>A new entry has been submitted to your contest: {contest_name}</div><div><br></div><div>Entry Details:</div><div>- Contestant: {contestant_name}</div><div>- Submission Time: {submission_time}</div><div>- Entry Number: #{entry_number}</div><div><br></div><div>Review the entry: {entry_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "contestant_name",
+            "submission_time",
+            "entry_number"
+        ],
+        "channels": ["push", "inapp"]
+    },
+    {
+        "type": "ORG_VOTING_START",
+        "name": "Organizer Voting Start",
+        "title": "Voting Period Started",
+        "message": "Voting has begun for your contest: {contest_name}",
+        "email_subject": "Voting Started - {contest_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>The voting period has started for your contest: {contest_name}</div><div><br></div><div>Contest Status:</div><div>- Total Entries: {entry_count}</div><div>- Voting Period: {voting_duration}</div><div>- Prize Pool: {currency}{prize_pool}</div><div><br></div><div>Monitor voting progress: {contest_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "entry_count",
+            "voting_duration",
+            "prize_pool"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "ORG_VOTING_END",
+        "name": "Organizer Voting End",
+        "title": "Voting Period Ended",
+        "message": "Voting has ended for your contest: {contest_name}",
+        "email_subject": "Voting Ended - {contest_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>The voting period has ended for your contest: {contest_name}</div><div><br></div><div>Final Statistics:</div><div>- Total Votes: {total_votes}</div><div>- Participating Entries: {entry_count}</div><div>- Total Prize Pool: {currency}{prize_pool}</div><div><br></div><div>Next Steps:</div><div>1. Review the results</div><div>2. Confirm winners</div><div>3. Distribute prizes</div><div><br></div><div>View results: {results_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "total_votes",
+            "entry_count",
+            "prize_pool"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "ORG_NEW_VOTE",
+        "name": "Organizer New Vote",
+        "title": "New Vote Cast",
+        "message": "New vote in {contest_name} - Total votes: {total_votes}",
+        "email_subject": "Voting Update - {contest_name}",
+        "email_content": "<div>Hi {username},</div><div><br></div><div>Your contest {contest_name} has received new votes!</div><div><br></div><div>Current Contest Statistics:</div><div>- Total Votes: {total_votes}</div><div>- Active Voters: {active_voters}</div><div>- Most Voted Entry: {top_entry} ({top_entry_votes} votes)</div><div>- Vote Velocity: {votes_per_hour} votes/hour</div><div>- Time Remaining: {time_remaining}</div><div><br></div><div>Contest Health:</div><div>- Engagement Rate: {engagement_rate}%</div><div>- Vote Distribution: {vote_distribution}</div><div><br></div><div>View detailed analytics: {analytics_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} Team</div>",
+        "shortcodes": [
+            "username",
+            "contest_name",
+            "total_votes",
+            "active_voters",
+            "top_entry",
+            "top_entry_votes",
+            "time_remaining"
+        ],
+        "channels": ["email", "push", "inapp"]
+    },
+    {
+        "type": "NEW_USER",
+        "name": "Admin New User Notification",
+        "title": "New User Registration",
+        "message": "New user registered: {new_username}",
+        "email_subject": "New User Registration on {site_name}",
+        "email_content": "<div>Hi Admin,</div><div><br></div><div>A new user has registered on {site_name}.</div><div><br></div><div>User Details:</div><div>- Username: {username}</div><div>- Email: {user_email}</div><div>- Registration Date: {registration_date}</div><div>- User Type: {user_type}</div><div>- Registration IP: {ip_address}</div><div><br></div><div>View user profile: {user_profile_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} System</div>",
+        "shortcodes": [
+            "username",
+            "name",
+            "user_email",
+            "registration_date",
+            "user_type",
+            "ip_address",
+            "user_link"
+        ],
+        "channels": ["inapp"]
+    },
+    {
+        "type": "NEW_CONTEST",
+        "name": "Admin New Contest Notification",
+        "title": "New Contest Created",
+        "message": "New contest created: {contest_name}",
+        "email_subject": "New Contest Created on {site_name}",
+        "email_content": "<div>Hi Admin,</div><div><br></div><div>A new contest has been created and requires review.</div><div><br></div><div>Contest Details:</div><div>- Name: {contest_name}</div><div>- Organizer: {organizer_name}</div><div>- Category: {contest_category}</div><div>- Prize Pool: {currency}{prize_pool}</div><div>- Entry Fee: {currency}{entry_fee}</div><div>- Duration: {contest_duration}</div><div><br></div><div>Review contest: {contest_review_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} System</div>",
+        "shortcodes": [
+            "contest_name",
+            "organizer_name",
+            "contest_category",
+            "prize_pool",
+            "entry_fee",
+            "contest_duration",
+            "contest_link"
+        ],
+        "channels": ["inapp"]
+    },
+    {
+        "type": "WITHDRAW_REQUEST",
+        "name": "Admin Withdrawal Request",
+        "title": "New Withdrawal Request",
+        "message": "New withdrawal request from {username}",
+        "email_subject": "New Withdrawal Request on {site_name}",
+        "email_content": "<div>Hi Admin,</div><div><br></div><div>A new withdrawal request requires your review.</div><div><br></div><div>Request Details:</div><div>- User: {username}</div><div>- Amount: {currency}{amount}</div><div>- Request ID: {withdraw_code}</div><div>- Request Date: {request_date}</div><div>- Payment Method: {payment_method}</div><div>- User Account Balance: {currency}{user_balance}</div><div><br></div><div>Review request: {review_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} System</div>",
+        "shortcodes": [
+            "username",
+            "amount",
+            "withdraw_code",
+            "request_date",
+            "payment_method",
+            "user_balance",
+            "review_link"
+        ],
+        "channels": ["email", "inapp"]
+    },
+    {
+        "type": "PAYMENT_RECEIVED",
+        "name": "Admin Payment Notification",
+        "title": "New Payment Received",
+        "message": "Payment received: {currency}{amount} from {username}",
+        "email_subject": "New Payment Received on {site_name}",
+        "email_content": "<div>Hi Admin,</div><div><br></div><div>A new payment has been received.</div><div><br></div><div>Payment Details:</div><div>- User: {username}</div><div>- Amount: {currency}{amount}</div><div>- Transaction ID: {transaction_id}</div><div>- Payment Method: {payment_method}</div><div>- Date: {payment_date}</div><div>- Purpose: {payment_purpose}</div><div><br></div><div>View transaction: {transaction_link}</div><div><br></div><div>Best regards,</div><div>The {site_name} System</div>",
+        "shortcodes": [
+            "username",
+            "amount",
+            "transaction_id",
+            "payment_method",
+            "payment_date",
+            "payment_purpose",
+            "transaction_link"
+        ],
+        "channels": ["email", "inapp"]
+    },
+    {
+        "type": "ADMIN_SUBMISSION",
+        "name": "Admin Entry Review",
+        "title": "New Entry Requires Review",
+        "message": "New entry requires review for {contest_name}",
+        "email_subject": "Entry Review Required - {contest_name}",
+        "email_content": "<div>Hi Admin,</div><div><br></div><div>A new contest entry requires your review.</div><div><br></div><div>Entry Details:</div><div>- Contest: {contest_name}</div><div>- Contestant: {contestant_name}</div><div>- Submission Time: {submission_time}</div><div>- Entry Type: {entry_type}</div><div>- Content Warning Flags: {content_flags}</div><div><br></div><div>Review entry: {review_link}</div><div><br></div><div>Please review this entry within {review_deadline} hours.</div><div><br></div><div>Best regards,</div><div>The {site_name} System</div>",
+        "shortcodes": [
+            "contest_name",
+            "contestant_name",
+            "submission_time",
+            "entry_type",
+            "content_flags",
+            "review_link",
+            "review_deadline"
+        ],
+        "channels": ["email", "inapp", "push"]
+    }
+]

@@ -14,7 +14,7 @@ services:
     networks:
       - icompete-network
     expose:
-      - "9000"
+      - "8080"
 
   # Nginx Service
   nginx:
